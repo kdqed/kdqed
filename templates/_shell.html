@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<title>${title}</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="description" content="${description}">
+		
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="${title}">
+		<meta name="twitter:description" content="${description}">
+		<meta name="twitter:url" content="${page_url}">
+		<meta name="twitter:image" content="${cover_image_url}">
+
+		<meta property="og:site_name" content="kdqed">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="${page_url}">
+		<meta property="og:title" content="${title}">
+		<meta property="og:description" content="${description}">
+
+		<meta property="og:image" content="${cover_image_url}">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400,600&display=swap" rel="stylesheet">
+    
+		<style>
+			* {
+				box-sizing: border-box;
+				font-family: "Noto Sans Mono", monospace;
+				line-height: 200%;
+				letter-spacing: 0.02rem;
+				margin: 0;
+				padding: 0;
+			}
+
+			:root {
+			  --bg1: #090a0b;
+				--fg1: #9aa5b7;
+				--t1: #125a87;
+				--t2: #0a334d;
+				--base-size: clamp(16px, 2.5vw, 24px);
+				--max-width: calc(var(--base-size)*36);
+			}
+
+			body{
+				font-size: var(--base-size);
+				background: #111418;
+				color: var(--fg1);
+				margin: 0;
+				padding: 0;
+			}
+
+			#backdrop {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background: url(${cover_image_url});
+				background-position: center;
+				background-size: cover;
+				z-index: -20;
+			}
+
+			header {
+				background: #090a0bd0;
+				backdrop-filter: blur(4px);
+				display: grid;
+				align-items: space-between;
+				padding: 1rem;
+			}
+
+			header img {
+				height: 2rem;
+				width: auto;
+			}
+
+			main {
+				text-align: center;
+				padding: 0;
+				margin-bottom: 100vh;
+			}	
+
+			.hero-container, .content-container {
+				width: 100%;
+				text-align: center;
+			}
+
+			.hero-container {
+				background: #090a0bd0;
+				backdrop-filter: blur(4px);
+				min-height: 40vh;
+				display: grid;
+				place-items: center;
+			}
+
+			.content-container {
+				background: #090a0bf8;
+				backdrop-filter: blur(8px);
+				padding: 5vh 0;
+			}
+			
+			section.hero {
+				display: inline-block;
+				width: 100%;
+				max-width: var(--max-width);
+				padding: 0.5rem;
+			}
+			
+			section.content {
+				display: inline-block;
+				width: 100%;
+				max-width: var(--max-width);
+				text-align: left;
+				padding: 0.5rem;
+			}
+		
+			footer {
+				text-align: center;
+				padding: 2rem 0;
+				background: #090a0bd0;
+				backdrop-filter: blur(4px);
+			}
+
+			h1 {
+				font-size: 2rem;
+			}
+
+			h2 {
+				color: var(--t1);
+				font-size: 1.5rem;
+				margin-top: 2rem;
+			}
+
+			ul, p {
+				margin-top: 1.5rem; 
+			}
+
+			ul li {
+				list-style-type: "- ";
+				margin: 1rem 0;
+			}
+			
+			li>a:first-child {
+				background: var(--t2);
+				color: var(--fg1); 
+				text-decoration: none;
+				display: inline-block;
+				padding: 0.25rem 1rem;
+				border-radius: 0.5rem;
+			}
+
+		</style>
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <header>
+	    <a href="/">
+        <img src="/logo.png" alt="logo"/>
+	    </a>
+    </header>
+    <main>
+			<div class="hero-container">
+				<section class="hero">
+      		<h1>${title}</h1>
+				</section>
+			</div>
+			<div class="content-container">
+				<section class="content">
+					${main_html_content}
+				</section>
+			</div>
+    </main>
+		<footer>© Karthik D</footer>
+  </body>
+</html>
