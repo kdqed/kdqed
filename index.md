@@ -2,7 +2,7 @@
 title: "@kdqed / Karthik Devan"
 description: "Personal Website"
 ---
-Hello Friend! Welcome to my personal website.
+Hello Friend! Welcome to my website.
 
 I'm often asked, "What do you do?". This website is a futile attempt at answering that question.
 
