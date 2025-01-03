@@ -1,5 +1,9 @@
 ---
-title: My Technical Writing Work
 cover_image: technical-writing.webp
+title: My Technical Writing Work
 ---
-List will be here soon
+## White Papers
+
+## Blogs
+
+## Tutorials

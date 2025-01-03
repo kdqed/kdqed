@@ -22,34 +22,39 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400..700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
     
 		<style>
 			* {
 				box-sizing: border-box;
 				font-family: "Afacad Flux", sans-serif;
-				line-height: 150%;
-				letter-spacing: 0.01em;
 				margin: 0;
 				padding: 0;
 			}
 
 			:root {
 				--bg1: #192027;
+			  --bgt: #192027a0;
+			  --bgt1: #192027d0;
+			  --bgt2: #192027f0;
+			  --bg2: #32404e;
 			  --fg1: #8b9fb3;
 			  --fg2: #a9b8c7;
 			  --fg3: #d1d9e1;
-			  --bgt: #192027d0;
 			  --fgt: #8b9fb3;
-				--tblue: #225c86;
-				--tcyan: #228186;
-				--tyellow: #866d22;
-				--tgreen: #377144;
-				--tmagenta: #583771;
-				--tred: #7e2a34;
-				--base-size: clamp(12px, 2.5vw, 32px);
-				--max-width: calc(var(--base-size)*32);
+				--tblue: #335d86;
+				--tbluel: #3d9eff;
+				--tcyan: #2a848f;
+				--tcyanl: #57ccdb;
+				--tyellow: #a28917;
+				--tgreen: #45744d;
+				--tmagenta: #6f4871;
+				--tred: #78414c;
+				--tredl: #cb4d66;
+				--base-size: clamp(12px, 2.1vw, 32px);
+				--max-width: calc(var(--base-size)*34);
 				font-size: var(--base-size);
+				letter-spacing: 0.01rem;
 			}
 
 			body {
@@ -73,21 +78,24 @@
 			}
 
 			header {
-				background: var(--bgt);
 				color: var(--fgt);
-				backdrop-filter: blur(4px);
 				display: grid;
-				align-items: space-between;
 				padding: 1rem;
+				align-items: center;
+				/*background: var(--bgt1);
+				background-blend-mode: multiply;
+				backdrop-filter: blur(16px);*/
 			}
       
-      header a.logo {
-        mix-blend-mode: plus-lighter;
+      header>a {
+        display: inline-block;
+        height: 1rem;
       }
       
 			header img {
-				height: 2rem;
+				height: 1.5rem;
 				width: auto;
+				mix-blend-mode: plus-lighter;
 			}
 
 			main {
@@ -101,18 +109,20 @@
 			}
 
 			.hero-container {
-				background: var(--bgt);
 				color: var(--fg1);
-				backdrop-filter: blur(4px);
-				min-height: 30vh;
 				display: grid;
 				place-items: center;
+				padding: 4vh 1rem 8vh 1rem;
 			}
 
 			.content-container {
-				background: var(--bg1);
+				background: var(--bgt2);
 				padding-top: 5vh;
 				padding-bottom: 10vh;
+				background-blend-mode: multiply;
+				backdrop-filter: blur(64px);
+				border-top: 0.2rem solid var(--bg2);
+				border-bottom: 0.2rem solid var(--bg2);
 			}
 			
 			section.hero {
@@ -126,7 +136,8 @@
 			  width: 5rem;
 			  height: auto;
 			  border-radius: 100%;
-			  border: 0.25rem solid var(--fg1);
+			  border: 0.25rem solid var(--bgt);
+			  margin-bottom: 1rem;
 			}
 			
 			section.content {
@@ -135,49 +146,103 @@
 				max-width: var(--max-width);
 				text-align: left;
 				padding: 0.5rem;
+				color: var(--fg3);
+				line-height: 150%;
+			}
+			
+			section.content>* {
+			  margin-top: 1rem;
 			}
 		
 			footer {
 				text-align: center;
-				padding: 4rem 0;
-				background: var(--bgt);
-				color: var(--fg2);
-				backdrop-filter: blur(4px);
+				padding-top: 2rem;
+				padding-bottom: 100vh;
 			}
 			
-			footer>* {
-			  mix-blend-mode: plus-lighter;
+			footer>div {
+			  background-blend-mode: multiply;
+			  background: var(--bgt1);
+			  color: var(--fg2);
+			  backdrop-filter: blur(16px);
+			  display: inline-flex;
+			  align-items: center;
+			  gap: 1rem;
+			  padding: 0.5rem 1rem;
+			  border-radius: 0.5rem;
 			}
-
+			
+			footer nav {
+			  display: flex;
+			  align-items: center;
+			  gap: 0.25rem;
+			}
+			
+			footer nav a {
+			  display: inline-flex;
+			  height: 100%;
+			  align-items: center;
+			  color: inherit;
+			}
+      
+      footer nav svg {
+        width: 1rem;
+        height: 1rem;
+      }
+      
+      footer nav svg path {
+        stroke: var(--fg2);
+        stroke-width: 0.07rem;
+      }
+      
 			h1 {
 				font-size: 1.75rem;
-				mix-blend-mode: plus-lighter;
+				background: var(--bgt1);
+				background-blend-mode: multiply;
+				backdrop-filter: blur(16px);
+				display: inline-block;
+				padding: 0.25rem 0.5rem;
+				border-radius: 0.25rem;
 			}
 
-			h2 {
-				color: var(--tblue);
+			section.content>h2 {
+			  margin-top: 2rem;
+				color: var(--fg2);
 				font-size: 1.5rem;
-				margin-top: 2rem;
+				border-bottom: 0.125rem solid var(--bg2);
+				padding-bottom: 0.25rem;
 			}
 
 			ul, p {
-				margin-top: 1.5rem;
-				font-size: var(--base-size);
+				font-size: inherit;
 			}
-
-			ul li {
-				list-style-type: "- ";
-				margin: 1rem 0;
+    
+      ul li {
+        margin-left: 0.5rem;
+        padding-left: 0.5rem;
+        margin-top: 0.25rem;
+      }
+      
+			ul li::marker {
+				content: "o";
 			}
 			
 			li>a:first-child {
-				background: var(--t2);
-				color: var(--fg1); 
-				text-decoration: none;
-				display: inline-block;
-				padding: 0.25rem 1rem;
-				border-radius: 0.5rem;
+				color: var(--tbluel);
 			}
+      
+      blockquote {
+        background: var(--bg1);
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        line-height: 160%;
+        border-radius: 0.25rem;
+        border: 0.15rem solid var(--tredl);
+      }
+      
+      blockquote>p {
+        margin: 0;
+      }
       
       .text-badge {
         background: var(--tyellow);
@@ -193,8 +258,8 @@
   <body>
     <div id="backdrop"></div>
     <header>
-	    <a href="/" class='logo'>
-        <img src="/assets/brand/logo.svg" alt="logo"/>
+	    <a href="/" class="logo">
+        <img src="/assets/brand/logo.png" alt="logo">
 	    </a>
     </header>
     <main>
@@ -202,6 +267,7 @@
 				<section class="hero">
 				  {% if page.url == '/' %}
 				    <img src='/assets/brand/dp.png' class='dp'>
+				    <br>
 				  {% endif %}
       		<h1>{{page.title}}</h1>
 				</section>
@@ -212,6 +278,27 @@
 				</section>
 			</div>
     </main>
-		<footer>© {{site.time | date: '%Y'}} {{site.name}}</footer>
+		<footer>
+		  <div>
+		    <div>© {{site.time | date: '%Y'}} {{site.name}}</div>
+		    <nav>
+		      <a href='https://instagram.com/kdqed' target="_blank">
+		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="#000000" stroke-width="1.5"></path><path d="M17.5 6.51L17.51 6.49889" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+		      </a>
+		      <a href='https://x.com/kdqed' target="_blank">
+		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.8198 20.7684L3.75317 3.96836C3.44664 3.57425 3.72749 3 4.22678 3H6.70655C6.8917 3 7.06649 3.08548 7.18016 3.23164L20.2468 20.0316C20.5534 20.4258 20.2725 21 19.7732 21H17.2935C17.1083 21 16.9335 20.9145 16.8198 20.7684Z" stroke="#000000" stroke-width="1.5"></path><path d="M20 3L4 21" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path></svg>
+		      </a>
+		      <a href='https://linkedin.com/in/kdqed' target="_blank">
+		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17V13.5V10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 7.01L7.01 6.99889" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+		      </a>
+		      <a href='https://github.com/kdqed'>
+		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+		      </a>
+		      <a href='https://dev.to/kdqed'>
+		        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35 3.88-2.9 5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM404.1 32H43.9C19.7 32 .06 51.59 0 75.8v360.4C.06 460.41 19.7 480 43.9 480h360.2c24.21 0 43.84-19.59 43.9-43.8V75.8c-.06-24.21-19.7-43.8-43.9-43.8zM154.2 291.19c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28l.01 70.93zm100.68-88.66H201.6v38.42h32.57v29.57H201.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19l-.01 29.52zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58l-38.46 144.8z"></path></svg>
+		      </a>
+		    </nav>
+		  </div>
+		</footer>
   </body>
 </html>
