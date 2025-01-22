@@ -2,33 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
-		<title>{{ page.title }}</title>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-		<meta name="description" content="{{page.description}}">
-		<link rel="shortcut icon" type="image/png" href="/assets/brand/favicon.ico">
-		
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="{{page.title}}">
-		<meta name="twitter:description" content="{{page.description}}">
-		<meta name="twitter:url" content="{{site.base_url}}{{page.url}}">
-		<meta name="twitter:image" content="/assets/covers/{{page.cover_image}}">
+	  <title>{{ page.title }}</title>
+	  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	  <meta name="description" content="{{page.description}}">
+	  <link rel="shortcut icon" type="image/png" href="/assets/brand/favicon.ico">
+		  
+	  <meta name="twitter:card" content="summary_large_image">
+	  <meta name="twitter:title" content="{{page.title}}">
+	  <meta name="twitter:description" content="{{page.description}}">
+	  <meta name="twitter:url" content="{{site.base_url}}{{page.url}}">
+	  <meta name="twitter:image" content="/assets/covers/{{page.cover_image}}">
 
-		<meta property="og:site_name" content="kdqed">
-		<meta property="og:type" content="article">
-		<meta property="og:url" content="{{site.base_url}}{{page.url}}">
-		<meta property="og:title" content="{{page.title}}">
-		<meta property="og:description" content="{{page.description}}">
+	  <meta property="og:site_name" content="kdqed">
+	  <meta property="og:type" content="article">
+	  <meta property="og:url" content="{{site.base_url}}{{page.url}}">
+	  <meta property="og:title" content="{{page.title}}">
+	  <meta property="og:description" content="{{page.description}}">
 
-		<meta property="og:image" content="/assets/covers/{{page.cover_image}}">
+	  <meta property="og:image" content="/assets/covers/{{page.cover_image}}">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..1000&display=swap" rel="stylesheet">
     
 		<style>
 			* {
 				box-sizing: border-box;
-				font-family: "Afacad Flux", sans-serif;
+				font-family: "Jost", sans-serif;
 				margin: 0;
 				padding: 0;
 			}
@@ -42,7 +42,7 @@
 			  --fg1: #8b9fb3;
 			  --fg2: #a9b8c7;
 			  --fg3: #d1d9e1;
-			  --fgt: #8b9fb3;
+			  --fgt: #8b9fb3a0;
 				--tblue: #335d86;
 				--tbluel: #3d9eff;
 				--tcyan: #2a848f;
@@ -53,8 +53,8 @@
 				--tmagenta: #6f4871;
 				--tred: #78414c;
 				--tredl: #cb4d66;
-				--base-size: clamp(24px, 2.1vw, 32px);
-				--max-width: calc(var(--base-size)*34);
+				--base-size: clamp(22px, 1.8vw, 32px);
+				--max-width: calc(var(--base-size)*36);
 				font-size: var(--base-size);
 				letter-spacing: 0.01rem;
 			}
@@ -65,6 +65,10 @@
 				color: var(--fg1);
 				margin: 0;
 				padding: 0;
+			}
+			
+			a {
+			  color: inherit;
 			}
 
 			#backdrop {
@@ -81,24 +85,37 @@
 
 			header {
 				color: var(--fgt);
-				display: flex;
+				display: grid;
 				padding: 1rem;
 				align-items: center;
-				justify-content: space-between;
-				/*background: var(--bgt1);
-				background-blend-mode: multiply;
-				backdrop-filter: blur(16px);*/
+				grid-template-columns: 1fr auto auto;
+				gap: 1rem;
 			}
       
       header>a.logo {
         display: inline-block;
-        height: 1rem;
+        height: 1.5rem;
       }
       
 			header img {
 				height: 1.5rem;
 				width: auto;
 				mix-blend-mode: plus-lighter;
+			}
+			
+			header a.posts-link {
+			  display: inline-flex;
+			  align-items: center;
+			  gap: 0.5rem;
+			  color: var(--tbluel);
+			  background-blend-mode: multiply;
+			  background: var(--bgt1);
+			  font-size: 0.8rem;
+			  backdrop-filter: blur(16px);
+			  text-decoration: none;
+			  padding: 0.25rem 0.75rem;
+			  border-radius: 0.25rem;
+			  border: 0.1rem solid var(--tbluel);
 			}
 			
 			header a.mail-link {
@@ -174,7 +191,7 @@
 				text-align: left;
 				padding: 1rem;
 				color: var(--fg3);
-				line-height: 150%;
+				line-height: 170%;
 			}
 			
 			section.content>* {
@@ -235,19 +252,61 @@
 				padding: 0.25rem 0.5rem;
 				border-radius: 0.25rem;
 			}
-
+      
+      section.content a {
+        color: var(--tbluel);
+      }
+      
 			section.content>h2 {
 			  margin-top: 2rem;
 				color: var(--fg2);
 				font-size: 1.5rem;
 			}
+			
+			section.content>p>img {
+			  width: 100%;
+			}
+			
+			section.content>table {
+			  width: 100%;
+			  border-collapse: collapse;
+			  display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+			}
+			
+			section.content>table th {
+			  background: var(--fgt);
+			  color: var(--bg1);
+			  padding: 0.25rem 0.5rem;
+			  font-size: 0.8rem;
+			}
+			
+			section.content>table td {
+			  background: var(--bgt2);
+			  padding: 0.25rem 0.5rem;
+			  font-size: 0.8rem;
+			  border: 1px solid var(--fgt);
+			  max-width: 60vw;
+			  white-space: wrap;
+			}
+			
+			section.content>table tr:nth-child(2n) td {
+			  background: var(--bgt);
+			}
 
-			ul, p {
+			ul, ol, p {
 				font-size: inherit;
 			}
     
       ul li {
         margin-left: 0.5rem;
+        padding-left: 0.5rem;
+        margin-top: 0.25rem;
+      }
+      
+      ol li {
+        margin-left: 1.25rem;
         padding-left: 0.5rem;
         margin-top: 0.25rem;
       }
@@ -283,6 +342,26 @@
         font-size: 75%;
       }
 		</style>
+		
+		{% if page.is_post %}
+		<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{{page.schema_type}}",
+      "headline": "{{page.title}}",
+      "image": [
+        "/assets/covers/{{page.cover_image}}"
+      ],
+      "datePublished": "{{page.date}}",
+      "dateModified": "{{page.date}}",
+      "author": [{
+          "@type": "Person",
+          "name": "Karthik Devan",
+          "url": "https://kdqed.com"
+      }]
+    }
+    </script>
+		{% endif %}
   </head>
   <body>
     <div id="backdrop"></div>
@@ -290,6 +369,7 @@
 	    <a href="/" class="logo">
         <img src="/assets/brand/logo.png" alt="logo">
 	    </a>
+	    <a href="/posts" class="posts-link">Posts</a>
 	    <a href="mailto:krtdvn@gmail.com" class='mail-link'>
 	      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9L9.5 12L14 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 19H3C1.89543 19 1 18.1046 1 17V7C1 5.89543 1.89543 5 3 5H16C17.1046 5 18 5.89543 18 7V9" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path><path d="M17 14H23M23 14L20 11M23 14L20 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 	      <span>krtdvn@gmail.com</span>
@@ -303,10 +383,14 @@
 				    <br>
 				  {% endif %}
       		<h1>{{page.title}}</h1>
+      		
 				</section>
 			</div>
 			<div class="content-container">
 				<section class="content">
+				  {% if page.is_post %}
+      		<p><em>{{page.date | date: "%B %-d, %Y"}}</em></p>
+      		{% endif %}
 					{{content}}
 				</section>
 			</div>

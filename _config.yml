@@ -35,6 +35,13 @@ defaults:
       layout: "default"
       cover_image: "default.webp"
       description: "kdqed / Karthik Devan"
+  - 
+    scope:
+      path: ""
+      type: posts
+    values:
+      is_post: true
+      schema_type: BlogPosting
       
 # Exclude from processing.
 # The following items will not be processed, by default.
