@@ -25,11 +25,11 @@ I divided the city map into small hexagonal bins using [Uber’s H3 grid system]
 
 ![BBMP Tree Census Density Map](/assets/posts/bbmp-tree-census-analysis/density_map.png)
 
-Trees in the data are not evenly distributed across the city. They rather appear in small clusters, suggesting that the survey may be ongoing going area-wise. This map does not seem to represent the green cover distribution in Bengaluru yet.
+Trees in the data are not evenly distributed across the city. They rather appear in small clusters, suggesting that the survey may be ongoing area-wise. This map does not seem to represent the green cover distribution in Bengaluru yet.
 
 ## Zone-Wise Tree Distribution
 
-The next thing explored was how the surveyed trees were spread out across the zones. BBMP has 8 zones, namely East, West, South, Rajarajeshwari Nagar, Mahadevapura, Bommanahalli, Yelahanka, and Dasarahalli. 
+The next thing I explored was how the surveyed trees were spread out across the zones. BBMP has 8 zones, namely East, West, South, Rajarajeshwari Nagar, Mahadevapura, Bommanahalli, Yelahanka, and Dasarahalli. 
 
 > NOTE: There were no data points from Dasarahalli in this dataset.
 > 
@@ -38,7 +38,7 @@ By counting the number of trees in each zone and dividing it by the sq. km. area
 
 ![BBMP Tree Census Zone-Wise Density Map](/assets/posts/bbmp-tree-census-analysis/zonewise_density_map.png)
 
-| Zone | Total Trees | Trees Per Sq. km |
+| Zone | Total Surveyed Trees | Trees Per Sq. km |
 | --- | --- | --- |
 | South | 58652 | 961 |
 | Rajarajeshwari Nagar | 90205 | 779 |
@@ -53,7 +53,7 @@ As of now, South and Rajarajeshwari Nagar zones are leading the tree density tab
 
 ## Tree Species Distribution
 
-The data also had a ‘TreeName’ column with the scientific name of each tree. Naturally, I analyzed the distribution of different trees.
+The data also had a ‘TreeName’ column with the scientific name of each tree. This led me to analyze the diversity of tree species.
 
 The data had mentions of 233 different species of trees, excluding the trees labeled as ‘Others’, which I refer to as ‘unidentified trees’ and discuss in a later section. Unidenfitied trees accounted for 14% of the total. The full list of trees is available [here](https://github.com/kdqed/bbmp-tree-census-analysis/blob/main/results/tree_name_count.md). The most common trees (greater than 1% of total) are shown in the table below:
 
