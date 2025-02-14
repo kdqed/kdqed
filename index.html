@@ -81,7 +81,7 @@ description: "Personal Website"
     <img src="/assets/covers/{{post.cover_image}}">
     <div>
       <p class='title'>{{post.title}}</p>
-      <p class='date'>{{post.date | date: "%B %-d, %Y"}}</p>
+      <p class='date'><em>{{post.date | date: "%B %-d, %Y"}}</em></p>
     </div>
   </a>
 {% endfor %}

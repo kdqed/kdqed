@@ -34,25 +34,25 @@
 			}
 
 			:root {
-				--bg1: #192027;
-			  --bgt: #192027a0;
-			  --bgt1: #192027d0;
-			  --bgt2: #192027f0;
-			  --bg2: #32404e;
-			  --fg1: #8b9fb3;
-			  --fg2: #a9b8c7;
-			  --fg3: #d1d9e1;
-			  --fgt: #8b9fb3a0;
-				--tblue: #335d86;
-				--tbluel: #3d9eff;
-				--tcyan: #2a848f;
-				--tcyanl: #57ccdb;
-				--tyellow: #a28917;
-				--tgreen: #45744d;
-				--tgreenl: #53c666;
-				--tmagenta: #6f4871;
-				--tred: #78414c;
-				--tredl: #cb4d66;
+				--bg1: #1e242b;
+			  --bgt: #1e242ba0;
+			  --bgt1: #1e242bd0;
+			  --bgt2: #1e242bf0;
+			  --bg2: #3b4754;
+			  --fg1: #addfff;
+			  --fg2: #ebf6ffa0;
+			  --fg3: #ebf6ff;
+			  --fgt: #ebf6ffd0;
+				--tblue: #688ab1;
+				--tbluel: #8fbcef;
+				--tcyan: #5cb9cc;
+				--tcyanl: #7dd6e8;
+				--tyellow: #bfbf75;
+				--tgreen: #699669;
+				--tgreenl: #8cd98c;
+				--tmagenta: #966996;
+				--tred: #a66663;
+				--tredl: #ebb0ad;
 				--base-size: clamp(22px, 1.8vw, 32px);
 				--max-width: calc(var(--base-size)*36);
 				font-size: var(--base-size);
@@ -107,7 +107,7 @@
 			  display: inline-flex;
 			  align-items: center;
 			  gap: 0.5rem;
-			  color: var(--tbluel);
+			  color: var(--tblue);
 			  background-blend-mode: multiply;
 			  background: var(--bgt1);
 			  font-size: 0.75rem;
@@ -115,14 +115,14 @@
 			  text-decoration: none;
 			  padding: 0.25rem 0.75rem;
 			  border-radius: 0.25rem;
-			  border: 0.1rem solid var(--tbluel);
+			  border: 0.1rem solid var(--tblue);
 			}
 			
 			header a.mail-link {
 			  display: inline-flex;
 			  align-items: center;
 			  gap: 0.5rem;
-			  color: var(--tgreenl);
+			  color: var(--tgreen);
 			  background-blend-mode: multiply;
 			  background: var(--bgt1);
 			  font-size: 0.75rem;
@@ -130,7 +130,7 @@
 			  text-decoration: none;
 			  padding: 0.25rem 0.75rem;
 			  border-radius: 0.25rem;
-			  border: 0.1rem solid var(--tgreenl);
+			  border: 0.1rem solid var(--tgreen);
 			}
 			
 			a.mail-link svg {
@@ -139,7 +139,7 @@
       }
       
       a.mail-link svg path {
-        stroke: var(--tgreenl);
+        stroke: var(--tgreen);
         stroke-width: 0.07rem;
       }
 
@@ -254,7 +254,7 @@
 			}
       
       section.content a {
-        color: var(--tbluel);
+        color: var(--tcyan);
       }
       
 			section.content>h2 {
@@ -316,7 +316,7 @@
 			}
 			
 			li>a:first-child {
-				color: var(--tbluel);
+				color: var(--tcyan);
 			}
       
       blockquote {
@@ -325,12 +325,16 @@
         font-size: 0.9rem;
         line-height: 160%;
         border-radius: 0.25rem;
-        border: 0.15rem solid var(--tredl);
+        border: 0.15rem solid var(--tred);
       }
       
       blockquote>p {
         margin: 0;
       }
+
+			p>em:only-child {
+				color: var(--tyellow);
+			}
       
       .text-badge {
         background: var(--tyellow);
