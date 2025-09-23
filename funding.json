@@ -1,0 +1,49 @@
+{
+    "version": "v1.0.0",
+    "entity": {
+        "type": "individual",
+        "role": "owner",
+        "name": "Karthik Devan",
+        "email": "krtdvn@gmail.com",
+        "phone": "",
+        "description": "Full Stack Hombre",
+        "webpageUrl": {
+            "url": "https://kdqed.com"
+        }
+    },
+    "projects": [{
+        "guid": "zaturn",
+        "name": "Zaturn",
+        "description": "Open Source AI Co-Pilot For Data Analytics & Business Insights",
+        "webpageUrl": {
+            "url": "https://zaturn.pro",
+            "wellKnown": "https://zaturn.pro/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/kdqed/zaturn",
+            "wellKnown": "https://github.com/kdqed/zaturn/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["MIT"],
+        "tags": ["analytics", "artificial-intelligence", "business-intelligence", "data", "data-science", "data-visualization"]
+    }],
+    "funding": {
+        "channels": [{
+            "guid": "bank-transfer",
+            "type": "bank",
+            "address": "",
+            "description": "Will accept bank transfers. Please e-mail me for details."
+        }],
+        "plans": [{
+            "guid": "developer-time",
+            "status": "active",
+            "name": "Developer compensation",
+            "description": "This will cover the cost of one developer working part-time on the projects.",
+            "amount": 2000,
+            "currency": "USD",
+            "frequency": "monthly",
+            "channels": ["bank-transfer"]
+        }]
+    }
+}
+
+

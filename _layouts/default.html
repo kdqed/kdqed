@@ -159,7 +159,7 @@
 				color: var(--fg1);
 				display: grid;
 				place-items: center;
-				padding: 10vh 1rem 10vh 1rem;
+				padding: 5vh 1rem 5vh 1rem;
 			}
 
 			.content-container {
@@ -179,7 +179,7 @@
 			}
 			
 			section.hero .dp {
-			  width: 8rem;
+			  width: 6rem;
 			  height: auto;
 			  border-radius: 100%;
 			  border: 0.25rem solid var(--bgt);
@@ -244,15 +244,20 @@
         stroke: var(--fg2);
         stroke-width: 0.07rem;
       }
-      
-			h1 {
-				font-size: 1.75rem;
+
+			hgroup {
 				background: var(--bgt1);
 				background-blend-mode: multiply;
 				backdrop-filter: blur(16px);
 				display: inline-block;
-				padding: 0.25rem 0.5rem;
-				border-radius: 0.25rem;
+				padding: 1rem 0.75rem;
+				border-radius: 0.5rem;
+				display: grid;
+				gap: 0.5rem;
+			}
+      
+			h1 {
+				font-size: 1.5rem;
 			}
       
       section.content a {
@@ -385,19 +390,23 @@
 			<div class="hero-container">
 				<section class="hero">
 				  {% if page.url == '/' %}
-				    <img src='/assets/brand/dp.webp' class='dp'>
+				    <img src='/assets/brand/dp.jpg' class='dp'>
 				    <br>
 				  {% endif %}
-      		<h1>{{page.title}}</h1>
-      		
+      		<hgroup>
+						<h1>{{page.title}}</h1>
+						{% if page.url == '/' %}
+						<p><em>Full Stack Hombre</em></p>
+						{% endif %}
+						{% if page.is_post %}
+						<p><em>{{page.date | date: "%B %-d, %Y"}}</em></p>
+						{% endif %}
+      		</hgroup>
 				</section>
 			</div>
 			<div class="content-container">
 				<section class="content">
-				  {% if page.is_post %}
-      		<p><em>{{page.date | date: "%B %-d, %Y"}}</em></p>
-      		{% endif %}
-					{{content}}
+				  {{content}}
 				</section>
 			</div>
     </main>
