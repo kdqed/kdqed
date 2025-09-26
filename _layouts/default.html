@@ -23,12 +23,13 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+
+
 		<style>
 			* {
 				box-sizing: border-box;
-				font-family: "Jost", sans-serif;
+				font-family: "Fira Code", sans-serif;
 				margin: 0;
 				padding: 0;
 			}
@@ -36,7 +37,7 @@
 			:root {
 				--bg1: #1e242b;
 			  --bgt: #1e242ba0;
-			  --bgt1: #1e242bd0;
+			  --bgt1: #1e242b80;
 			  --bgt2: #1e242bfa;
 			  --bg2: #3b4754;
 			  --fg1: #addfff;
@@ -55,8 +56,8 @@
 				--tmagental: #d194d1;
 				--tred: #a66663;
 				--tredl: #ebb0ad;
-				--base-size: clamp(22px, 1.8vw, 32px);
-				--max-width: calc(var(--base-size)*36);
+				--base-size: clamp(18px, 1.5vw, 32px);
+				--max-width: calc(var(--base-size)*44);
 				font-size: var(--base-size);
 				letter-spacing: 0.01rem;
 			}
@@ -88,10 +89,11 @@
 			header {
 				color: var(--fgt);
 				display: grid;
-				padding: 0.5rem;
+				padding: 1rem;
 				align-items: center;
 				grid-template-columns: 1fr auto;
 				gap: 1rem;
+				background: var(--bgt1);
 			}
       
       header>a.logo {
@@ -125,14 +127,13 @@
 			  align-items: center;
 			  gap: 0.5rem;
 			  color: var(--tgreenl);
-			  background-blend-mode: multiply;
+			  /*background-blend-mode: multiply;
+			  backdrop-filter: blur(16px);*/
 			  background: var(--bgt1);
 			  font-size: 0.75rem;
-			  backdrop-filter: blur(16px);
 			  text-decoration: none;
 			  padding: 0.25rem 0.75rem;
 			  border-radius: 0.25rem;
-			  border: 0.1rem solid var(--tgreenl);
 			}
 			
 			a.mail-link svg {
@@ -141,7 +142,7 @@
       }
       
       a.mail-link svg path {
-        stroke: var(--tgreen);
+        stroke: var(--tgreenl);
         stroke-width: 0.07rem;
       }
 
@@ -159,17 +160,15 @@
 				color: var(--fg1);
 				display: grid;
 				place-items: center;
-				padding: 5vh 1rem 5vh 1rem;
+				padding: 8vh 1rem 0 1rem;
+				background-image: linear-gradient(var(--bgt1), var(--bgt2) 90%, var(--bgt2));
 			}
 
 			.content-container {
 				background: var(--bgt2);
-				padding-top: 5vh;
 				padding-bottom: 10vh;
 				background-blend-mode: multiply;
-				backdrop-filter: blur(64px);
-				border-top: 0.2rem solid var(--bg2);
-				border-bottom: 0.2rem solid var(--bg2);
+				backdrop-filter: blur(2px);
 			}
 			
 			section.hero {
@@ -183,7 +182,7 @@
 			  height: auto;
 			  border-radius: 100%;
 			  border: 0.25rem solid var(--bgt);
-			  margin-bottom: 1rem;
+			  margin-bottom: 0.25rem;
 			}
 			
 			section.content {
@@ -191,9 +190,9 @@
 				width: 100%;
 				max-width: var(--max-width);
 				text-align: left;
-				padding: 1rem;
+				padding: 1rem 1rem;
 				color: var(--fg1);
-				line-height: 170%;
+				line-height: 200%;
 			}
 			
 			section.content>* {
@@ -246,18 +245,30 @@
       }
 
 			hgroup {
-				background: var(--bgt1);
-				background-blend-mode: multiply;
-				backdrop-filter: blur(16px);
 				display: inline-block;
-				padding: 1rem 0.75rem;
+				padding: 0.5rem 0.75rem;
 				border-radius: 0.5rem;
 				display: grid;
-				gap: 0.5rem;
+				gap: 1rem;
 			}
       
 			h1 {
 				font-size: 1.5rem;
+				text-wrap: balance;
+			}
+
+			.post-meta {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+			}
+
+			.post-meta img {
+				width: 2rem;
+				height: 2rem;
+				border-radius: 5rem;
 			}
       
       section.content a {
@@ -307,14 +318,14 @@
 			}
     
       ul li {
-        margin-left: 0.5rem;
-        padding-left: 0.5rem;
+        margin-left: 2rem;
+        padding-left: 1rem;
         margin-top: 0.25rem;
       }
       
       ol li {
-        margin-left: 1.25rem;
-        padding-left: 0.5rem;
+        margin-left: 2rem;
+        padding-left: 1rem;
         margin-top: 0.25rem;
       }
       
@@ -394,12 +405,20 @@
 				    <br>
 				  {% endif %}
       		<hgroup>
+						{% if page.is_post %}
+						<p class="post-meta">
+							<em>{{page.date | date: "%B %-d, %Y"}}</em>
+						</p>
+						{% endif %}
 						<h1>{{page.title}}</h1>
 						{% if page.url == '/' %}
 						<p><em>Full Stack Hombre</em></p>
 						{% endif %}
 						{% if page.is_post %}
-						<p><em>{{page.date | date: "%B %-d, %Y"}}</em></p>
+						<p class="post-meta">
+							<img src='/assets/brand/dp.jpg'>
+							<em>Karthik Devan</em>
+						</p>
 						{% endif %}
       		</hgroup>
 				</section>
