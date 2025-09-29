@@ -23,41 +23,30 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-
-
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		
 		<style>
 			* {
 				box-sizing: border-box;
-				font-family: "Fira Code", sans-serif;
+				font-family: "Noto Sans", sans-serif;
 				margin: 0;
 				padding: 0;
 			}
 
 			:root {
-				--bg1: #1e242b;
-			  --bgt: #1e242ba0;
-			  --bgt1: #1e242b80;
-			  --bgt2: #1e242bfa;
-			  --bg2: #3b4754;
-			  --fg1: #addfff;
-			  --fg2: #ebf6ffa0;
+				--fg1: #afc3cf;
+			  --fg2: #ebf6ffc0;
 			  --fg3: #ebf6ff;
 			  --fgt: #ebf6ffd0;
-				--tblue: #688ab1;
-				--tbluel: #8fbcef;
-				--tcyan: #5cb9cc;
-				--tcyanl: #7dd6e8;
-				--tyellow: #bfbf75;
-				--tyellowl: #e8e87d;
-				--tgreen: #699669;
-				--tgreenl: #8cd98c;
-				--tmagenta: #9c639c;
-				--tmagental: #d194d1;
-				--tred: #a66663;
-				--tredl: #ebb0ad;
-				--base-size: clamp(18px, 1.5vw, 32px);
-				--max-width: calc(var(--base-size)*44);
+			  
+			  --bg1: #0f161a;
+			  --bgt1: #0f161a80;
+			  --bgt2: #0f161afa;
+			  
+			  --t1: #54b2ff;
+				
+				--base-size: clamp(18px, 1.4vw, 32px);
+				--max-width: calc(var(--base-size)*46);
 				font-size: var(--base-size);
 				letter-spacing: 0.01rem;
 			}
@@ -72,6 +61,7 @@
 			
 			a {
 			  color: inherit;
+			  cursor: pointer;
 			}
 
 			#backdrop {
@@ -81,7 +71,7 @@
 				width: 100%;
 				height: 100vh;
 				background: url(/assets/covers/{{page.cover_image}});
-				background-position: left top;
+				background-position: center center;
 				background-size: cover;
 				z-index: -20;
 			}
@@ -90,60 +80,43 @@
 				color: var(--fgt);
 				display: grid;
 				padding: 1rem;
-				align-items: center;
-				grid-template-columns: 1fr auto;
+				align-items: stretcj;
+				grid-template-columns: 1fr auto auto;
 				gap: 1rem;
 				background: var(--bgt1);
 			}
       
       header>a.logo {
         display: inline-block;
-        height: 1.5rem;
+        height: 2rem;
       }
       
 			header img {
-				height: 1.5rem;
+				height: 2rem;
 				width: auto;
 				mix-blend-mode: plus-lighter;
 			}
 			
-			header a.posts-link {
+			
+			header a:not(.logo) {
 			  display: inline-flex;
+			  height: 100%;
 			  align-items: center;
 			  gap: 0.5rem;
-			  color: var(--tbluel);
-			  background-blend-mode: multiply;
-			  background: var(--bgt1);
-			  font-size: 0.75rem;
-			  backdrop-filter: blur(16px);
-			  text-decoration: none;
-			  padding: 0.25rem 0.75rem;
-			  border-radius: 0.25rem;
-			  border: 0.1rem solid var(--tbluel);
-			}
-			
-			header a.mail-link {
-			  display: inline-flex;
-			  align-items: center;
-			  gap: 0.5rem;
-			  color: var(--tgreenl);
-			  /*background-blend-mode: multiply;
-			  backdrop-filter: blur(16px);*/
-			  background: var(--bgt1);
+			  color: var(--fgt);
 			  font-size: 0.75rem;
 			  text-decoration: none;
-			  padding: 0.25rem 0.75rem;
-			  border-radius: 0.25rem;
 			}
 			
-			a.mail-link svg {
-        height: 1rem;
+			header a svg {
+        height: 1.5rem;
         width: auto;
+        mix-blend-mode: plus-lighter;
       }
       
-      a.mail-link svg path {
-        stroke: var(--tgreenl);
-        stroke-width: 0.07rem;
+      header a svg path {
+        stroke: var(--fgt);
+        stroke-width: 0.1rem;
       }
 
 			main {
@@ -160,17 +133,17 @@
 				color: var(--fg1);
 				display: grid;
 				place-items: center;
-				padding: 8vh 1rem 0 1rem;
-				background-image: linear-gradient(var(--bgt1), var(--bgt2) 90%, var(--bgt2));
+				padding: 0.5rem;
+				min-height: 57vh;
+				background-image: radial-gradient(200vw 57vh at 50% 0%, var(--bgt1), var(--bgt1) 25%, var(--bgt2) 100%);
 			}
 
 			.content-container {
 				background: var(--bgt2);
 				padding-bottom: 10vh;
 				background-blend-mode: multiply;
-				backdrop-filter: blur(2px);
 			}
-			
+
 			section.hero {
 				display: inline-block;
 				width: 100%;
@@ -178,10 +151,12 @@
 			}
 			
 			section.hero .dp {
-			  width: 6rem;
+			  width: 8rem;
 			  height: auto;
 			  border-radius: 100%;
-			  border: 0.25rem solid var(--bgt);
+			  padding: 0.5rem;
+			  background: var(--bgt1);
+			  backdrop-filter: blur(32px);
 			  margin-bottom: 0.25rem;
 			}
 			
@@ -190,26 +165,26 @@
 				width: 100%;
 				max-width: var(--max-width);
 				text-align: left;
-				padding: 1rem 1rem;
+				padding: 1rem 0.5rem;
 				color: var(--fg1);
 				line-height: 200%;
 			}
 			
 			section.content>* {
 			  margin-top: 1rem;
+			  padding: 0 1rem;
 			}
 		
 			footer {
 				text-align: center;
-				padding: 2rem 1rem 100vh 1rem;
+				padding: 2rem 1rem 20vh 1rem;
+				margin-bottom: 100vh;
+				background-image: radial-gradient(100vw 50vh at 50% 0%, var(--bgt2), var(--bgt2) 50%, transparent 70%);
 			}
 			
 			footer>div {
-			  background-blend-mode: multiply;
-			  background: var(--bgt1);
 			  color: var(--fg2);
 			  font-size: 1.25rem;
-			  backdrop-filter: blur(16px);
 			  display: inline-flex;
 			  flex-wrap: wrap;
 			  align-items: center;
@@ -245,11 +220,12 @@
       }
 
 			hgroup {
-				display: inline-block;
 				padding: 0.5rem 0.75rem;
 				border-radius: 0.5rem;
 				display: grid;
 				gap: 1rem;
+				color: var(--fg2);
+				justify-items: center;
 			}
       
 			h1 {
@@ -258,21 +234,31 @@
 			}
 
 			.post-meta {
-				display: flex;
+				display: inline-flex;
 				flex-wrap: wrap;
 				align-items: center;
 				justify-content: center;
-				gap: 1rem;
+				gap: 0.5rem;
 			}
 
-			.post-meta img {
+			.post-meta.author {
+				padding: 0.5rem;
+				padding-right: 1rem;
+				border-radius: 5rem;
+				background: var(--bgt1);
+				text-decoration: none;
+				backdrop-filter: blur(4px);
+			}
+
+
+			.post-meta.author img {
 				width: 2rem;
 				height: 2rem;
 				border-radius: 5rem;
 			}
       
       section.content a {
-        color: var(--tcyan);
+        color: var(--t1);
       }
       
 			section.content>h2 {
@@ -334,16 +320,17 @@
 			}
 			
 			li>a:first-child {
-				color: var(--tcyan);
+				color: var(--t1);
 			}
       
       blockquote {
-        background: var(--bg1);
-        padding: 0.5rem;
+        background: #101010d0;
+        padding: 0.75rem;
         font-size: 0.9rem;
         line-height: 160%;
-        border-radius: 0.25rem;
-        border: 0.15rem solid var(--tred);
+        border-radius: 0.5rem;
+        border-left: 0.5rem solid var(--t1);
+        backdrop-filter: blur(4px);
       }
       
       blockquote>p {
@@ -392,9 +379,19 @@
 	    <a href="/" class="logo">
         <img src="/assets/brand/logo.png" alt="logo">
 	    </a>
-	    <a href="mailto:krtdvn@gmail.com" class='mail-link'>
-	      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9L9.5 12L14 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 19H3C1.89543 19 1 18.1046 1 17V7C1 5.89543 1.89543 5 3 5H16C17.1046 5 18 5.89543 18 7V9" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path><path d="M17 14H23M23 14L20 11M23 14L20 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-	      <span>krtdvn@gmail.com</span>
+	    <a href="mailto:krtdvn@gmail.com" target="_blank">
+	      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5 9L9.5 12L14 9" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path d="M17 19H3C1.89543 19 1 18.1046 1 17V7C1 5.89543 1.89543 5 3 5H16C17.1046 5 18 5.89543 18 7V9" stroke="#000000" stroke-width="2.5" stroke-linecap="round"></path>
+					<path d="M17 14H23M23 14L20 11M23 14L20 17" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+	    </a>
+	    <a href="/feed.xml" target="_blank">
+	      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 19C12 14.8 9.2 12 5 12" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path d="M19 19C19 10.6 13.4 5 5 5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path d="M5 19.01L5.01 18.9989" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
 	    </a>
     </header>
     <main>
@@ -412,13 +409,17 @@
 						{% endif %}
 						<h1>{{page.title}}</h1>
 						{% if page.url == '/' %}
-						<p><em>Full Stack Hombre</em></p>
+						<p>
+							<a onclick="showSpPopup()">
+								<em><u>Full Stack Person</u></em>
+							</a>
+						</p>
 						{% endif %}
 						{% if page.is_post %}
-						<p class="post-meta">
+						<a class="post-meta author" href="/">
 							<img src='/assets/brand/dp.jpg'>
-							<em>Karthik Devan</em>
-						</p>
+							<span>Karthik Devan</span>
+						</a>
 						{% endif %}
       		</hgroup>
 				</section>
@@ -457,5 +458,11 @@
 		
 		<!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script>
+			function showSpPopup() {
+				alert('1/2\nA human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly.');
+				alert('2/2\nSPECIALIZATION IS FOR INSECTS\n\n- Robert A. Heinlein');
+			}
+    </script>
   </body>
 </html>

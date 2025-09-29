@@ -1,9 +1,9 @@
 ---
-title: "@kdqed / Karthik Devan"
+title: "Karthik Devan (@kdqed)"
 description: "Personal Website"
 ---
 <p>
-  Hello Friend! Welcome to my website.
+  Hello friend, welcome to my website!
 </p>
 <p>
   I'm often asked, "What do you do?". This website is a futile attempt at answering that question. Below is a non-exhaustive and mutually non-exclusive list of buckets capturing my work (and play):
@@ -17,32 +17,31 @@ description: "Personal Website"
 </ul>
 
 <style>
-  a.feed-link {
-    text-decoration: none;
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    gap: 0.25rem;
-    align-items: center;
-  }
-  
-  a.feed-link svg {
-    height: 1rem;
-    width: auto;
-  }
-  
-  a.feed-link svg path {
-    stroke: var(--tbluel);
-    stroke-width: 0.07rem;
-  }
-  
   a.post {
     display: grid;
     grid-template-columns: 15vw 1fr;
     gap: 1rem;
     text-decoration: none;
     padding: 1rem;
-    background: var(--bgt2);
+    border-radius: 1rem;
+    position: relative;
+    align-items: center;
+  }
+
+  a.post>* {
+    z-index: 1;
+  }
+
+  a.post>.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #101010e0;
+    z-index: 0;
     border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
   }
   
   a.post img {
@@ -55,6 +54,7 @@ description: "Personal Website"
   a.post p.title {
     font-weight: bold;
     color: var(--fg1);
+    text-wrap: balance;
   }
   
   a.post p.date {
@@ -77,7 +77,8 @@ description: "Personal Website"
 
 <h2>Latest Posts</h2>
 {% for post in site.posts %}
-  <a class='post' href='{{post.url}}'>
+  <a class='post' href='{{post.url}}' style="background-image: url(/assets/covers/{{post.cover_image}}); background-size: cover; background-position: center center;">
+    <div class="blur"></div>
     <img src="/assets/covers/{{post.cover_image}}">
     <div>
       <p class='title'>{{post.title}}</p>
@@ -85,19 +86,4 @@ description: "Personal Website"
     </div>
   </a>
 {% endfor %}
-<a class="feed-link" href="/feed.xml" target="_blank">
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 19C12 14.8 9.2 12 5 12" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19 19C19 10.6 13.4 5 5 5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 19.01L5.01 18.9989" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-  <span>{{site.base_url}}/feed.xml</span>
-</a>
-<br><br>
-<hr>
-<br>
-<blockquote>
-A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. 
-<br>
-SPECIALIZATION IS FOR INSECTS
-<br><br>
-- <em>Robert A. Heinlein</em>
-</blockquote>
-<br>
-* P.S.: Almost all backdrops on this site are AI generated.
+
