@@ -23,7 +23,7 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		
 		<style>
 			* {
@@ -172,7 +172,6 @@
 			
 			section.content>* {
 			  margin-top: 1rem;
-			  padding: 0 1rem;
 			}
 		
 			footer {
@@ -325,16 +324,41 @@
       
       blockquote {
         background: #101010d0;
-        padding: 0.75rem;
+        padding: 1rem 0.75rem;
         font-size: 0.9rem;
         line-height: 160%;
-        border-radius: 0.5rem;
-        border-left: 0.5rem solid var(--t1);
+        border-radius: 0.2rem;
+        border-left: 0.2rem solid var(--t1);
         backdrop-filter: blur(4px);
       }
       
       blockquote>p {
         margin: 0;
+      }
+
+      code, code * {
+				font-family: "JetBrains Mono", monospace;
+      }
+
+      pre {
+				display: block;
+				width: 100%;
+				overflow-x: auto;
+				padding: 0.5rem 1rem;
+				background: #101010d0;
+				border-radius: 0.25rem;
+      }
+
+      pre>code {
+				font-size: 0.8rem;
+      }
+
+      :not(pre)>code {
+				display: inline-block;
+				font-size: 0.8rem;
+				padding: 0rem 0.5rem;
+				background: #101010d0;
+				border-radius: 0.25rem;
       }
 
 			p>em:only-child {
@@ -350,6 +374,8 @@
         border-radius: 0.0rem;
         font-size: 75%;
       }
+
+      
 		</style>
 		
 		{% if page.is_post %}
