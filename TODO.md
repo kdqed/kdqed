@@ -1,0 +1,2 @@
+- Adding padding for phone
+- Make sitemap 
