@@ -17,6 +17,8 @@ title: My Technical Writing Work
 - [How to Scrape With Camoufox to Bypass Antibot Technology](https://www.scrapingbee.com/blog/how-to-scrape-with-camoufox-to-bypass-antibot-technology/)
 - [How to Bypass CreepJS and Spoof Browser Fingerprinting](https://www.scrapingbee.com/blog/creepjs-browser-fingerprinting/)
 
+## Blogs For NewsCatcher
+- [Fake News Detection Using Python](https://www.newscatcherapi.com/blog-posts/fake-news-detection-using-python)
 
 ## Linux Tutorials For Baeldung:
 - [Operating a MIDI Keyboard Input Device in Linux](https://www.baeldung.com/linux/midi-keyboard-operation)
