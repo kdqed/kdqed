@@ -1,2 +1,3 @@
 - Adding padding for phone
-- Make sitemap 
+- Make sitemap
+- Fix Feed 
