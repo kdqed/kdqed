@@ -9,6 +9,8 @@ This is a follow-up to my [previous post](https://kdqed.com/bbmp-tree-census-ana
 
 The dataset I used was obtained from the [OpenCity Portal](https://data.opencity.in/dataset/bengaluru-tree-census-data/resource/bbmp-tree-census-data---july-2025), and it is from July 2025. This dataset consists of about 6.8 lakh trees, of which I couldn't classify about 3000 into any of the 5 corporations. I obtained the map boundaries for the 5 corporations [also from OpenCity](https://data.opencity.in/dataset/greater-bengaluru-authority-corporations-delimitation-2025/resource/greater-bengaluru-authority-five-corporations-map---september-2025).
 
+All the code used in this analysis is [on my GitHub](https://github.com/kdqed/bengaluru-tree-census-analysis).
+
 ## Index
 
 - City Wide Tree Species Frequency
