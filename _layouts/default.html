@@ -178,7 +178,7 @@
 				text-align: center;
 				padding: 2rem 1rem 20vh 1rem;
 				margin-bottom: 100vh;
-				background-image: radial-gradient(100vw 50vh at 50% 0%, var(--bgt2), var(--bgt2) 50%, transparent 70%);
+				background-image: linear-gradient(var(--bgt2) 0%, var(--bgt2) 50%, transparent 60%);
 			}
 			
 			footer>div {
@@ -281,13 +281,14 @@
 			section.content>table th {
 			  background: var(--fgt);
 			  color: var(--bg1);
-			  padding: 0.25rem 0.5rem;
+			  border: 1px solid var(--fg1);
+			  padding: 0.25rem 0.75rem;
 			  font-size: 0.8rem;
 			}
 			
 			section.content>table td {
 			  background: var(--bgt2);
-			  padding: 0.25rem 0.5rem;
+			  padding: 0.25rem 0.75rem;
 			  font-size: 0.8rem;
 			  border: 1px solid var(--fgt);
 			  max-width: 60vw;
