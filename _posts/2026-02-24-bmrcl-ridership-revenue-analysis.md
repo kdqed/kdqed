@@ -82,3 +82,7 @@ Finally, quoting the original [diagramchasing blog](https://diagramchasing.fun/2
 
 > All the above analysis stems from a single dataset. For organizations such as BMRCL, the takeaway should be obvious, which is to release this data regularly. When data is available and covers a long period of time, it can be used to answer a much wider range of questions, more accurately and with greater detail. You can’t beat the cost of getting analysis and insights from the public, for free. If you are from BMRCL (or another government agency), please consider releasing data like this regularly.
 
+## Footnotes
+
+- This analysis is based on the [BMRCL ridership data](https://github.com/Vonter/bmrcl-ridership-hourly) obtained and published by [Vivek Matthew](https://orcid.org/0009-0003-2627-7788).
+- The code used for the analysis is [on my GitHub](https://github.com/kdqed/bmrcl-ridership-revenue)
