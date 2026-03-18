@@ -146,6 +146,3 @@ A tree census by BBMP in Bengaluru is a first-of-its-kind activity, and this is 
 As mentioned earlier, the census is far from complete, and this analysis only gives us preliminary insights. BBMP has not either completed the census or published the full dataset. Whenever the full data is publicly available, I hope to update this analysis.
 
 I used Python for the analysis, and [the code is on my GitHub](https://github.com/kdqed/bbmp-tree-census-analysis). I’m also exploring building software tools/apps for GIS data analysis. If you have any suggestions or requirements, [please email me](mailto:krtdvn@gmail.com).
-
-
-
