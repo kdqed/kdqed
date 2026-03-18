@@ -4,13 +4,13 @@ title: "AI & Iron Man: Why is the Man inside the Iron instead of vibing?"
 permalink: iron-man-got-no-vibes
 schema_type: NewsArticle
 ---
-As LLMs get better and better equipped with good tooling, most AI evangelists are selling the "AI will replace our workforce" narrative. The most notorious is probably Andrej Karpathy who came up with the idea of 'vibing', and quite often posts "Look how much my AI did without me touching anything". Such things, in my opinion, are purely marketing gimmicks. I'd say, typically a human + AI workflow is surely better and often faster than running Claude Code and watching it struggle for 2 hours. Other similar narratives go like "English is going to be the only programming language" and "no one is going read/write code anymore". Another one: "Everyone is going to be a manager, no more engineers."
+As LLMs get better and better equipped with good tooling, most AI evangelists are selling the "AI will replace our workforce" narrative. The most notorious is probably Andrej Karpathy who came up with the idea of 'vibing', and quite often posts "Look how much my AI did without me touching anything". Such things, in my opinion, are purely marketing gimmicks. I'd say, typically a human + AI workflow is surely better and often faster than running Claude Code and watching it struggle for 2 hours. Other similar narratives go like "English is going to be the only programming language" and "no one is going to read/write code anymore". Another one: "Everyone is going to be a manager, no more engineers."
 
 However, from my experience, and of several folks I know personally, AI has been only a great amplifier and augmenter of skills and talents that folks already have. And of incompetencies too. Somebody recently described a project to me and asked "Can Claude Code do this?", and I replied: "Depends on who uses Claude Code". One can use Claude to generate 10000 lines of React slop or 100 lines of vanilla JS that does the same thing. It depends.
 
 > Hot take: AI only makes things faster if you know what you're doing
 
-One of the ways I've been describing this to folks is the Iron Man narrative. Why is the Man still inside in the Iron when he has JARVIS to control the Iron and a whole fleet of Irons? I asked Gemini this question, and what we can learn about AI replacing people from this analogy. I'm paraphrasing the conversation below.
+One of the ways I've been describing this experience of mine to other folks is the Iron Man narrative. Why is the Man still inside in the Iron when he has JARVIS to control the Iron and a whole fleet of Irons? I asked Gemini this question, and what we can learn about AI replacing people from this analogy. I'm paraphrasing the conversation below.
 
 ---
 **Me**: 
