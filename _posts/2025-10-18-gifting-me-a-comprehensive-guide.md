@@ -1,5 +1,5 @@
 ---
-cover_image: confused-monkey-gift.webp
+cover_image: confused-monkey-gift.png
 title: "Gifting Me: A Comprehensive Guide"
 permalink: gifting-me-a-comprehensive-guide
 ---

@@ -20,382 +20,275 @@
 	  <meta property="og:description" content="{{page.description}}">
 
 	  <meta property="og:image" content="{{site.base_url}}/assets/covers/{{page.cover_image}}">
-
-	  <link rel="preconnect" href="https://fonts.googleapis.com">
-	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		
-		<style>
-			* {
-				box-sizing: border-box;
-				font-family: "Noto Sans", sans-serif;
-				margin: 0;
-				padding: 0;
-			}
-
-			:root {
-				--fg1: #afc3cf;
-			  --fg2: #ebf6ffc0;
-			  --fg3: #ebf6ff;
-			  --fgt: #ebf6ffd0;
-			  
-			  --bg1: #0f161a;
-			  --bgt1: #0f161a80;
-			  --bgt2: #0f161afa;
-			  
-			  --t1: #54b2ff;
-				
-				--base-size: clamp(18px, 1.4vw, 32px);
-				--max-width: calc(var(--base-size)*46);
-				font-size: var(--base-size);
-				letter-spacing: 0.01rem;
-			}
-
-			body {
-				font-size: var(--base-size);
-				background: var(--bg1);
-				color: var(--fg1);
-				margin: 0;
-				padding: 0;
-			}
-			
-			a {
-			  color: inherit;
-			  cursor: pointer;
-			}
-
-			#backdrop {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100vh;
-				background: url(/assets/covers/{{page.cover_image}});
-				background-position: center center;
-				background-size: cover;
-				z-index: -20;
-			}
-
-			header {
-				color: var(--fgt);
-				display: grid;
-				padding: 1rem;
-				align-items: stretcj;
-				grid-template-columns: 1fr auto auto;
-				gap: 1rem;
-				background: var(--bgt1);
-			}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <style>
+      @font-face {
+        font-family: "myfont";
+        src: url('/assets/brand/comic-shanns-mono-regular.otf');
+        font-display: swap;
+      }
       
-      header>a.logo {
+      :root {
+        font-size: 2vh;
+        
+        --bg1: #101014;
+        --bg2: #222021;
+        --fg1: #ac9e84;
+        --t1: #6c6498;
+        --t2: #6fe385;
+      }
+      
+      * {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+        font-family: "myfont", monospace;
+        color: var(--fg1);
+        line-height: 4ch;
+        font-variant-emoji: text;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background: var(--bg1);
+        /*background: url('/assets/brand/testbg.png');
+        background-size: 3ch 3ch;*/
+        text-align: center;
+      }
+      
+      #backdrop {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: url(/assets/covers/{{page.cover_image}});
+        background-size:cover;
+        background-position: center center;
+        z-index: -20;
+        image-rendering: pixelated;
+      }
+      
+      header {
+        padding: 2ch;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        background: var(--bg1);
+        text-align: left;
+        height: auto;
+        align-items: center;
+        justify-items: start;
+        color: var(--t2);
+        gap: 4ch;
+      }
+      
+      header img {
+        width: 4ch;
+        height: 4ch;
+        padding: 0.5ch;
         display: inline-block;
-        height: 2.5rem;
       }
       
-			header img {
-				height: 2.5rem;
-				width: auto;
-				mix-blend-mode: plus-lighter;
-			}
-			
-			
-			header a:not(.logo) {
-			  display: inline-flex;
-			  height: 100%;
-			  align-items: center;
-			  gap: 0.5rem;
-			  color: var(--fgt);
-			  font-size: 0.75rem;
-			  text-decoration: none;
-			}
-			
-			header a svg {
-        height: 1.5rem;
-        width: auto;
-        mix-blend-mode: plus-lighter;
+      header a {
+        display: inline-flex;
+        gap: 1ch;
+        text-decoration: none;
+        cursor: pointer;
       }
       
-      header a svg path {
-        stroke: var(--fgt);
-        stroke-width: 0.1rem;
-      }
-
-			main {
-				text-align: center;
-			}	
-
-			.hero-container, .content-container {
-				width: 100%;
-				text-align: center;
-			}
-
-			.hero-container {
-				color: var(--fg1);
-				display: grid;
-				place-items: center;
-				padding: 0.5rem;
-				min-height: 57vh;
-				background-image: radial-gradient(200vw 57vh at 50% 0%, var(--bgt1), var(--bgt1) 25%, var(--bgt2) 100%);
-			}
-
-			.content-container {
-				background: var(--bgt2);
-				padding: 1rem;
-				padding-bottom: 10vh;
-				background-blend-mode: multiply;
-			}
-
-			section.hero {
-				display: inline-block;
-				width: 100%;
-				max-width: var(--max-width);
-			}
-			
-			section.hero .dp {
-			  width: 8rem;
-			  height: auto;
-			  border-radius: 100%;
-			  padding: 0.5rem;
-			  background: var(--bgt1);
-			  backdrop-filter: blur(32px);
-			  margin-bottom: 0.25rem;
-			}
-			
-			section.content {
-				display: inline-block;
-				width: 100%;
-				max-width: var(--max-width);
-				text-align: left;
-				padding: 1rem 0.5rem;
-				color: var(--fg1);
-				line-height: 200%;
-			}
-			
-			section.content>* {
-			  margin-top: 1rem;
-			}
-		
-			footer {
-				text-align: center;
-				padding: 2rem 1rem 20vh 1rem;
-				margin-bottom: 100vh;
-				background-image: linear-gradient(var(--bgt2) 0%, var(--bgt2) 50%, transparent 60%);
-			}
-			
-			footer>div {
-			  color: var(--fg2);
-			  font-size: 1.25rem;
-			  display: inline-flex;
-			  flex-wrap: wrap;
-			  align-items: center;
-			  text-align: center;
-			  justify-content: center;
-			  gap: 1rem;
-			  padding: 1rem;
-			  border-radius: 0.5rem;
-			}
-			
-			footer nav {
-			  display: flex;
-			  align-items: center;
-			  text-align: center;
-			  gap: 0.5rem;
-			}
-			
-			footer nav a {
-			  display: inline-flex;
-			  height: 100%;
-			  align-items: center;
-			  color: inherit;
-			}
-      
-      footer nav svg {
-        height: 1.25rem;
-        width: auto;
+      main {
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        max-width: 60ch;
+        padding: 2ch;
+        margin-top: 20ch;
+        background: var(--bg1);
       }
       
-      footer nav svg path {
-        stroke: var(--fg2);
-        stroke-width: 0.07rem;
+      p.post-meta {
+        display: flex;
+        align-items: center;
       }
-
-			hgroup {
-				padding: 0.5rem 0.75rem;
-				border-radius: 0.5rem;
-				display: grid;
-				gap: 1rem;
-				color: var(--fg2);
-				justify-items: center;
-			}
       
-			h1 {
-				font-size: 1.5rem;
-				text-wrap: balance;
-			}
-
-			.post-meta {
-				display: inline-flex;
-				flex-wrap: wrap;
-				align-items: center;
-				justify-content: center;
-				gap: 0.5rem;
-			}
-
-			.post-meta.author {
-				padding: 0.5rem;
-				padding-right: 1rem;
-				border-radius: 5rem;
-				background: var(--bgt1);
-				text-decoration: none;
-				backdrop-filter: blur(4px);
-			}
-
-
-			.post-meta.author img {
-				width: 2rem;
-				height: 2rem;
-				border-radius: 5rem;
-			}
+      h1 {
+        margin-bottom: 4ch;
+      }
       
-      section.content a {
+      h2 {
         color: var(--t1);
+        margin: 2ch 0;
       }
       
-			section.content>h2 {
-			  margin-top: 2rem;
-				color: var(--fg3);
-				font-size: 1.5rem;
-			}
-			
-			section.content>p>img {
-			  width: 100%;
-			}
-			
-			section.content>table {
-			  width: 100%;
-			  border-collapse: collapse;
-			  display: block;
+      ul {
+        list-style-type: none;
+        padding-left: 0ch;
+        margin-bottom: 4ch;
+      }
+      
+      ul li {
+        display: block;
+      }
+      
+      li::before {
+        display: inline-block;
+        width: 2ch;
+        content: "❖";
+      }
+      
+      main a, main a * {
+        text-decoration: none;
+        color: var(--t2);
+        cursor: pointer;
+      }
+      
+      img.dp {
+        width: 2ch;
+        height: 2ch;
+        vertical-align: -0.4ch;
+      }
+      
+      emo-ji {
+        display: inline-block;
+        width: 3ch;
+        text-align: center;
+      }
+      
+      .content {
+        margin-top: 6ch;
+      }
+      
+      .content a {
+        text-decoration: underline;
+      }
+      
+      .content p {
+        margin-bottom: 4ch;
+      }
+      
+      .content img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .content table {
+        width: 100%;
+        border-collapse: collapse;
+        display: block;
         overflow-x: auto;
         white-space: nowrap;
-			}
-			
-			section.content>table th {
-			  background: var(--fgt);
-			  color: var(--bg1);
-			  border: 1px solid var(--fg1);
-			  padding: 0.25rem 0.75rem;
-			  font-size: 0.8rem;
-			}
-			
-			section.content>table td {
-			  background: var(--bgt2);
-			  padding: 0.25rem 0.75rem;
-			  font-size: 0.8rem;
-			  border: 1px solid var(--fgt);
-			  max-width: 60vw;
-			  white-space: wrap;
-			}
-			
-			section.content>table tr:nth-child(2n) td {
-			  background: var(--bgt);
-			}
-
-			ul, ol, p {
-				font-size: inherit;
-			}
-    
-      ul li {
-        margin-left: 2rem;
-        padding-left: 1rem;
-        margin-top: 0.25rem;
+        margin-bottom: 4ch;
       }
       
-      ol li {
-        margin-left: 2rem;
-        padding-left: 1rem;
-        margin-top: 0.25rem;
+      .content>table th {
+        background: var(--t1);
+        color: var(--bg1);
+        padding: 0 1ch;
+        border: 1ch solid var(--bg1);
       }
       
-			ul li::marker {
-				content: "o";
-			}
-			
-			li>a:first-child {
-				color: var(--t1);
-			}
+      .content>table td {
+        background: var(--bg2);
+        white-space: wrap;
+        padding: 0 1ch;
+        border: 1ch solid var(--bg1);
+      }
       
       blockquote {
-        background: #101010d0;
-        padding: 1rem 0.75rem;
-        font-size: 0.9rem;
-        line-height: 160%;
-        border-radius: 0.2rem;
-        border-left: 0.2rem solid var(--t1);
-        backdrop-filter: blur(4px);
+        background: var(--bg2);
+        padding: 2ch 2ch 2ch 1.5ch;
+        border-left: 0.5ch solid var(--t1);
+        margin-bottom: 4ch;
       }
       
-      blockquote>p {
-        margin: 0;
+      .content blockquote>p {
+        margin-bottom: 0;
       }
-
+      
+      .content pre {
+        padding: 2ch;
+        background: var(--bg2);
+        overflow-x: auto;
+        margin-bottom: 4ch;
+      }
+      
       code, code * {
-				font-family: "JetBrains Mono", monospace;
+        background: var(--bg2);
       }
-
-      pre {
-				display: block;
-				width: 100%;
-				overflow-x: auto;
-				padding: 0.5rem 1rem;
-				background: #101010d0;
-				border-radius: 0.25rem;
-      }
-
-      pre>code {
-				font-size: 0.8rem;
-      }
-
-      :not(pre)>code {
-				display: inline-block;
-				font-size: 0.8rem;
-				padding: 0rem 0.5rem;
-				background: #101010d0;
-				border-radius: 0.25rem;
-      }
-
-			p>em:only-child {
-				color: var(--tyellow);
-			}
       
-      .text-badge {
-        background: var(--tyellow);
-        color: var(--fg3);
+      .home-hero {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0 2ch;
+      }
+      
+      .home-hero img.dp {
+        grid-row: span 2;
+        width: 8ch;
+        height: 8ch;
+      }
+      
+      .home-hero h1 {
+        margin-bottom: 0;
+      }
+      
+      footer {
+        background: var(--bg1);
+        padding: 2ch;
+        margin-top: 4ch;
+        text-align: center;
+      }
+      
+      footer>div {
         display: inline-block;
-        padding: 0.125rem 0.25rem;
-        padding-bottom: 0.02rem;
-        border-radius: 0.0rem;
-        font-size: 75%;
+        width: 100%;
+        max-width: 60ch;
+        padding: 2ch;
+        text-align: left;
+      }
+      
+      footer a {
+        color: var(--t2);
+      }
+      
+      @media (orientation: landscape) {
+        :root {
+          font-size: 2.5vh;
+        }
+        
+        main {
+          padding: 8ch;
+          max-width: 76ch;
+        }
+        footer>div {
+          padding: 2ch 8ch;
+          max-width: 76ch;
+        }
       }
 
-      
-		</style>
-		
-		{% if page.is_post %}
-		<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "{{page.schema_type}}",
-      "headline": "{{page.title}}",
-      "image": [
-        "/assets/covers/{{page.cover_image}}"
-      ],
-      "datePublished": "{{page.date}}",
-      "dateModified": "{{page.date}}",
-      "author": [{
+    </style>
+
+	  {% if page.is_post %}
+	  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "{{page.schema_type}}",
+        "headline": "{{page.title}}",
+        "image": [
+          "/assets/covers/{{page.cover_image}}"
+        ],
+        "datePublished": "{{page.date}}",
+        "dateModified": "{{page.date}}",
+        "author": [{
           "@type": "Person",
           "name": "Karthik Devan",
           "url": "https://kdqed.com"
-      }]
-    }
+        }]
+      }
     </script>
 		{% endif %}
 		
@@ -403,86 +296,60 @@
   <body>
     <div id="backdrop"></div>
     <header>
-	    <a href="/" class="logo">
-        <img src="/assets/brand/logo.png" alt="logo">
-	    </a>
-	    <a href="mailto:krtdvn@gmail.com" target="_blank">
-	      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M5 9L9.5 12L14 9" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-					<path d="M17 19H3C1.89543 19 1 18.1046 1 17V7C1 5.89543 1.89543 5 3 5H16C17.1046 5 18 5.89543 18 7V9" stroke="#000000" stroke-width="2.5" stroke-linecap="round"></path>
-					<path d="M17 14H23M23 14L20 11M23 14L20 17" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-				</svg>
-	    </a>
-	    <a href="/feed.xml" target="_blank">
-	      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M12 19C12 14.8 9.2 12 5 12" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-					<path d="M19 19C19 10.6 13.4 5 5 5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-					<path d="M5 19.01L5.01 18.9989" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-				</svg>
-	    </a>
+	    <a href="/">
+        <img src="/assets/brand/logo.svg"/>
+      </a>
+      <a href="mailto:krtdvn@gmail.com"><emo-ji>📧</emo-ji> Email</a>
+      <a href="/feed.xml"><emo-ji>📢</emo-ji> Feed</a>
     </header>
     <main>
-			<div class="hero-container">
-				<section class="hero">
-				  {% if page.url == '/' %}
-				    <img src='/assets/brand/dp.jpg' class='dp'>
-				    <br>
-				  {% endif %}
-      		<hgroup>
-						{% if page.is_post %}
-						<p class="post-meta">
-							<em>{{page.date | date: "%B %-d, %Y"}}</em>
-						</p>
-						{% endif %}
-						<h1>{{page.title}}</h1>
-						{% if page.url == '/' %}
-						<p>
-							<a onclick="showSpPopup()">
-								<em><u>Full Stack Person</u></em>
-							</a>
-						</p>
-						{% endif %}
-						{% if page.is_post %}
-						<a class="post-meta author" href="/">
-							<img src='/assets/brand/dp.jpg'>
-							<span>Karthik Devan</span>
+      <section class="hero">
+        {% if page.url == '/' %}
+        <hgroup class="home-hero">
+          <img src='/assets/brand/dp.jpg' class='dp'>
+          <h1>Karthik Devan (@kdqed)</h1>
+      		<p>
+						<a onclick="showSpPopup()">
+							<em><u>Full Stack Person</u> <emo-ji>🧐</emo-ji></em>
 						</a>
-						{% endif %}
+					</p>
+        </hgroup>
+        {% endif %}
+        
+          {% if page.is_post %}
+      		<hgroup>
+						<h1>{{page.title}}</h1>
+            <p>
+						  <a href="/">
+			  				<img src='/assets/brand/dp.jpg' class="dp">
+                <span>Karthik Devan</span>
+			  			</a>
+            </p>
+            <p>
+              <span><em>{{page.date | date: "%B %-d, %Y"}}</em></span>
+            </p>
       		</hgroup>
+          {% endif %}
 				</section>
-			</div>
-			<div class="content-container">
 				<section class="content">
 				  {{content}}
 				</section>
-			</div>
     </main>
-		<footer>
-		  <div>
-		    <div>© {{site.time | date: '%Y'}} {{site.name}}</div>
-		    <nav>
-		      <a href='https://instagram.com/kdqed' target="_blank">
-		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="#000000" stroke-width="1.5"></path><path d="M17.5 6.51L17.51 6.49889" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-		      </a>
-		      <a href='https://x.com/kdqed' target="_blank">
-		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.8198 20.7684L3.75317 3.96836C3.44664 3.57425 3.72749 3 4.22678 3H6.70655C6.8917 3 7.06649 3.08548 7.18016 3.23164L20.2468 20.0316C20.5534 20.4258 20.2725 21 19.7732 21H17.2935C17.1083 21 16.9335 20.9145 16.8198 20.7684Z" stroke="#000000" stroke-width="1.5"></path><path d="M20 3L4 21" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path></svg>
-		      </a>
-		      <a href='https://linkedin.com/in/kdqed' target="_blank">
-		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17V13.5V10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 7.01L7.01 6.99889" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-		      </a>
-		      <a href='https://github.com/kdqed' target="_blank">
-		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-		      </a>
-		      <a href='https://dev.to/kdqed' target="_blank">
-		        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35 3.88-2.9 5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM404.1 32H43.9C19.7 32 .06 51.59 0 75.8v360.4C.06 460.41 19.7 480 43.9 480h360.2c24.21 0 43.84-19.59 43.9-43.8V75.8c-.06-24.21-19.7-43.8-43.9-43.8zM154.2 291.19c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28l.01 70.93zm100.68-88.66H201.6v38.42h32.57v29.57H201.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19l-.01 29.52zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58l-38.46 144.8z"></path></svg>
-		      </a>
-		      <a href='https://stackoverflow.com/users/9975991/kdqed' target="_blank">
-		        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 15V21H5V15" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 17L8 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.9126 14.6633L8.0874 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.7127 12.3809L9.46228 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18.1728 10.6423L12.0444 5.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20.0338 8.80409L15.1085 2.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-		      </a>
-		    </nav>
-		  </div>
-		</footer>
-		
+    
+    <footer>
+      <div>© 2026 Karthik Devan</div>
+      <br>
+      <div>
+        <span>Find Me On:</span>
+        <a href="">github</a>
+        <a href="">instagram</a>
+        <a href="">x.com</a>
+        <a href="">linkedin</a>
+        <a href="">dev.to</a>
+        <a href="">stackoverflow</a>
+      </div>
+    </footer>
+
 	<!-- 100% privacy-first analytics -->
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <script>

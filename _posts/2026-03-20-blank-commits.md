@@ -14,7 +14,7 @@ Or add an alias to `~/.gitconfig`
 
 ```
 [alias]
-	nccommit = commit -a --allow-empty-message -m \"\"
+  nccommit = commit -a --allow-empty-message -m \"\"
 ```
 
 Then you can:
@@ -33,9 +33,9 @@ git nccommit
 
 ## But What About Auto-generating Changelogs With Conventional Commits?
 
-Quoting [lobste.rs/~thiht](https://lobste.rs/~thiht):
-
 > Honestly I never bother reading changelogs generated from conventional commits, they're trash. Changelogs must be written by humans, for humans. A commit is too small a unit to make a useful changelog, it lacks high level vision.
+> 
+> [- lobste.rs/~thiht](https://lobste.rs/~thiht)
 
 ## References
 
