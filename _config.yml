@@ -34,7 +34,7 @@ defaults:
       path: ""
     values:
       layout: "default"
-      cover_image: "home-cover.png"
+      cover_image: "default.jpg"
       description: "kdqed / Karthik Devan"
   - 
     scope:
