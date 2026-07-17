@@ -260,7 +260,6 @@
       
       .home-hero {
         display: grid;
-        grid-template-columns: auto 1fr;
         gap: 0 1rem;
         width: 100%;
         align-items: center;
@@ -298,6 +297,10 @@
       @media (orientation: landscape) {
         :root {
           font-size: 2.5vh;
+        }
+        
+        .home-hero {
+          grid-template-columns: auto 1fr;
         }
       }
 
