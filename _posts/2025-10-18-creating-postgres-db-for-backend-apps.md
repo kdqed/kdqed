@@ -6,7 +6,7 @@ permalink: creating-postgresql-db-for-backend-app
 
 I've been trying to catch onto the "use PostgreSQL for everything" trend. So here's a personal reference note on how to create a new database along with a user, assign the necessary persmissions, and link it up to your app.
 
-__Step 1:__ Run `psql` as the `postgres`user
+__Step 1:__ Run `psql` as the `postgres` user
 
 ```
 $ sudo -u postgres psql

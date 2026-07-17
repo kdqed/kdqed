@@ -194,6 +194,7 @@
       }
       
       .content {
+        width: 100%;
       }
       
       .content a {
@@ -246,16 +247,24 @@
         margin-bottom: 0;
       }
       
-      .content pre {
-        padding: 1.5rem;
-        background: var(--bg2);
+      .content .highlight {
+        width: 100%;
+        max-width: calc(100vw - 3rem);
         overflow-x: auto;
+      }
+            
+      .content pre {
+        display: block;
+        max-width: 100%;
+        padding: 1rem;
+        background: var(--bg2);
         margin-bottom: 1rem;
       }
       
       code, code * {
         background: var(--bg2);
         font-family: "Fira Code", monospace;
+        font-size: 0.9rem;
       }
       
       .home-hero {
@@ -288,8 +297,8 @@
         display: inline-block;
         width: 100%;
         max-width: 116vh;
-        padding: 0.25rem 2rem;
-        text-align: left;
+        padding: 0.25rem 0.5rem;
+        text-align: center;
       }
       
       footer a {
@@ -361,7 +370,7 @@
                 <span>Karthik Devan</span>
 			  			</a>
               &nbsp | &nbsp
-              <span>{{page.date | date: "%B %-d, %Y"}}</span>
+              <span>{{page.date | date: "%Y%m%d"}}</span>
             </p>
             <p>
             </p>
